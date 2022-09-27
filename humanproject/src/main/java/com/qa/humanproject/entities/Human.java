@@ -1,19 +1,25 @@
 package com.qa.humanproject.entities;
 
 import org.springframework.stereotype.Component;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+
 
 @Component
 public class Human {
 
-    @size(min = 2, max = 30)
+    @Size(min = 2, max = 30)
     @NotNull
     private String firstName;
 
-    @size(min=2, max=30)
+    @Size(min=2, max=30)
     private String lastName;
 
-    @min(18)
-    @max(75)
+    @Min(18)
+    @Max(75)
     private int age; 
 
     public Human()
